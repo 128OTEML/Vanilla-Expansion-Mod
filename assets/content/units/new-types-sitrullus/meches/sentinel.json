@@ -45,6 +45,7 @@
       "shootSound": "rlOceanBossLaserShoot",
       "soundPitchMax": 1,
       "soundPitchMin": 1,
+      "shootSoundVolume": 0.6,
       "shake": 8,
       "shootY": 49,
       "cooldownTime": 120,
@@ -103,6 +104,7 @@
         "trailInterval": 0.5,
         "hitSound": "explosionArtilleryShockBig",
         "despawnSound": "explosionArtilleryShockBig",
+        "hitSoundVolume": 0.7,
         "splashDamage": 1400,
         "damage": 700,
         "splashDamageRadius": 56,
@@ -118,18 +120,18 @@
           {
             "type": "ExplosionEffect",
             "waveColor": "ffa665",
-            "waveStroke": 2,
+            "waveStroke": 0,
             "smokeColor": "ffa66588",
             "sparkColor": "ffa665",
             "sparks": 36,
-            "sparkLen": 12,
-            "sparkStroke": 2,
+            "sparkLen": 20,
+            "sparkStroke": 4,
             "sparkRad": 72,
-            "smokeSize": 15,
-            "smokeRad": 56,
-            "lifetime": 80,
+            "smokeSize": 5,
+            "smokeRad": 40,
+            "lifetime": 60,
             "waveRad": 48,
-            "smokes": 32
+            "smokes": 48
           },
           {
             "particles": 1,
@@ -162,6 +164,42 @@
           "spin": 7,
           "cone": 45,
           "region": "ve-square-effect"
+          },
+          {
+            "type": "WaveEffect",
+            "sides": 4,
+            "strokeFrom": 10,
+            "strokeTo": 0,
+            "sizeFrom": 0,
+            "sizeTo": 56,
+            "lifetime": 40,
+            "interp": "pow2Out",
+            "colorFrom": "ffa665",
+            "colorTo": "ffa665"
+          },
+          {
+            "type": "WaveEffect",
+            "sides": 4,
+            "strokeFrom": 5,
+            "strokeTo": 0,
+            "sizeFrom": 0,
+            "sizeTo": 80,
+            "lifetime": 40,
+            "interp": "pow2Out",
+            "colorFrom": "ffa665",
+            "colorTo": "ffa665"
+          },
+          {
+            "type": "WaveEffect",
+            "sides": 4,
+            "strokeFrom": 2.5,
+            "strokeTo": 0,
+            "sizeFrom": 0,
+            "sizeTo": 104,
+            "lifetime": 40,
+            "interp": "pow2Out",
+            "colorFrom": "ffa665",
+            "colorTo": "ffa665"
           }
         ]
       },

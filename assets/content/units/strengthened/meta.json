@@ -23,7 +23,7 @@
   "engineOffset": 62,
   "engineSize": 0,
   "researchCostMultiplier": 0.03,
-  "immunities": [ "electrified","interrupted","overdrive","overclock","pog","frozen" ],
+  "immunities": [ "electrified","interrupted","overdrive","overclock","pog","frozen","killed" ],
   "deathSound": "rlElectricBlockerBreakLoud",
   "shownPlanets": [ "cyclant","phoon","maress","thavina" ],
   "engines": [

@@ -402,6 +402,7 @@ newBlock("halberd",PowerTurret);
 log("30");
 newBlock("buster",ItemTurret);
 newBlock("parasite",ItemTurret);
+newBlock("shower",ItemTurret);
 newBlock("chain",PowerTurret);
 newBlock("sweep",PowerTurret);
 newBlock("stab",ItemTurret);

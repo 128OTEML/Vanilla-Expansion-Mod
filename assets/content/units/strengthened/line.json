@@ -124,7 +124,7 @@
           "hittable": false
         },
         "bulletInterval": 4,
-        "fragBullets": 6,
+        "fragBullets": 3,
         "lightning": 1,
         "lightningColor": "98ffa9",
         "lightningLength": 16,
