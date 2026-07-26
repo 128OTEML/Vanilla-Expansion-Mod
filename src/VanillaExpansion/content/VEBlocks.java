@@ -20,6 +20,7 @@ import mindustry.gen.Sounds;
 import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.defense.turrets.ItemTurret;
+import mindustry.world.blocks.distribution.OverflowGate;
 import mindustry.world.blocks.environment.*;
 import mindustry.world.consumers.ConsumeCoolant;
 import mindustry.world.consumers.ConsumeLiquid;
@@ -31,7 +32,6 @@ public class VEBlocks {
 
     public static final Seq<Block> proximaOres = new Seq<>();
 
-    // 比邻星核心方块
     public static Block proximaCore;
 
     public static Block largeHeatPipe;
@@ -51,25 +51,11 @@ public class VEBlocks {
     public static Block rbmkHeater;
     public static Block rbmkConsole;
 
-    // 末日防空炮台
-    public static Block endAntiAirTurret;
-
     // RBMK推送器
     public static Block rbmkPusher;
 
     // 大型蒸汽轮机
     public static Block largeSteamTurbine;
-
-    // DFC 系统
-    // DFCBase 保留作为基础类
-    public static Block dfcLaserEmitter;
-    public static Block dfcCore;
-    public static Block dfcStabilizer;
-    public static Block dfcInjector;
-    public static Block dfcEnergyEmitter;
-    public static Block dfcEnergyReceiver;
-    public static Block dfcExchanger;
-    public static Block dfcCreativeEmitter;
 
     // 机械臂
     public static Block mechanicalArm;
@@ -85,6 +71,11 @@ public class VEBlocks {
 
     // 分类流体桥
     public static Block adaptLiquidBridge;
+
+    //溢流门
+    public static Block overflow;
+    //反向溢流门
+    public static Block invertoverflow;
 
     // 管道
     public static Block pipe;
@@ -580,6 +571,20 @@ public class VEBlocks {
                         ammoMultiplier = 8f;
                     }}
             );
+        }};
+        overflow = new OverflowGate("overflow"){{
+            requirements(Category.distribution, ItemStack.with(
+                    VEItems.iron, 1
+            ));
+            health = 45;
+            invert = false;
+        }};
+        invertoverflow = new OverflowGate("invert-overflow"){{
+            requirements(Category.distribution, ItemStack.with(
+                    VEItems.iron, 1
+            ));
+            health = 45;
+            invert = true;
         }};
     }
 }
