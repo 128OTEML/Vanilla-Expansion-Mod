@@ -14,7 +14,7 @@ public class NeutronJetMesh implements GenericMesh{
 
     private MultiMesh mesh;
     private Planet planet;
-    public float rotateSpeed = 3f;
+    public float rotateSpeed = 9f;
 
     public NeutronJetMesh(Planet planet, float length, float radius, int particles, float twist, float scatter){
         this.planet = planet;

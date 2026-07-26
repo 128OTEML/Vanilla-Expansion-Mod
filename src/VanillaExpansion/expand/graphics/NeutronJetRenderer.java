@@ -14,11 +14,11 @@ public class NeutronJetRenderer{
 
     public float length = 400f;
     public float baseWidth = 24f;
-    public float rotationSpeed = 3.5f;
+    public float rotationSpeed = 10.5f;
     public float scatterAmount = 0.35f;
     public float twist = 2.5f;
     public float viewTilt = 50f;
-    public float brightness = 1.2f;
+    public float brightness = 2.4f;
     public int layers = 24;
     public int particlesPerLayer = 12;
     public float particleSize = 6f;

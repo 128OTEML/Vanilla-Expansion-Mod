@@ -572,14 +572,14 @@ public class VEBlocks {
                     }}
             );
         }};
-        overflow = new OverflowGate("overflow"){{
+        overflow = new OverflowGate("proxima-overflow-gate"){{
             requirements(Category.distribution, ItemStack.with(
                     VEItems.iron, 1
             ));
             health = 45;
             invert = false;
         }};
-        invertoverflow = new OverflowGate("invert-overflow"){{
+        invertoverflow = new OverflowGate("proxima-underflow-gate"){{
             requirements(Category.distribution, ItemStack.with(
                     VEItems.iron, 1
             ));
