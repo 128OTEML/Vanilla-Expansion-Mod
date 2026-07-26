@@ -30,7 +30,7 @@ public class VEPlanets {
     public static Planet proxima, neutronStar;
     /** 加载行星定义 */
     public static void load() {
-        neutronStar = new Planet("sol4b", Planets.sun, 0.9f, 2) {{
+        neutronStar = new Planet("sol4b", Planets.sun, 0.9f, 0) {{
             generator = new NeutronStarPlanetGenerator();
             meshLoader = () -> new RotatingMesh(new MultiMesh(new GenericMesh[]{
                 new SunMesh(this, 8, 5d, 0.3d, 3d, 1.2d, 0.8d, 1.1f, new Color[]{Color.valueOf("88bbff"), Color.valueOf("88ddff"), Color.valueOf("aaccff"), Color.valueOf("ccddff"), Color.valueOf("eeeeff"), Color.valueOf("ffffff")}),
