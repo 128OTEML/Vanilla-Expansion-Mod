@@ -7,12 +7,9 @@ import VanillaExpansion.expand.graphics.RotatingMesh;
 import VanillaExpansion.expand.graphics.ZAxisSkyMesh;
 import VanillaExpansion.expand.maps.NeutronStarPlanetGenerator;
 import VanillaExpansion.expand.maps.ProximaPlanetGenerator;
-import arc.graphics.*;
-import arc.graphics.g3d.*;
-import arc.math.geom.*;
+import arc.graphics.Color;
 import mindustry.Vars;
 import mindustry.content.Planets;
-import mindustry.graphics.Shaders;
 import mindustry.graphics.g3d.*;
 import mindustry.graphics.g3d.PlanetGrid.Ptile;
 import mindustry.type.Planet;
@@ -33,7 +30,7 @@ public class VEPlanets {
     public static Planet proxima, neutronStar;
     /** 加载行星定义 */
     public static void load() {
-        neutronStar = new Planet("sol4b", Planets.sun, 0.9f, 0) {{
+        neutronStar = new Planet("sol4b", Planets.sun, 0.9f, 2) {{
             generator = new NeutronStarPlanetGenerator();
             meshLoader = () -> new RotatingMesh(new MultiMesh(new GenericMesh[]{
                 new SunMesh(this, 8, 5d, 0.3d, 3d, 1.2d, 0.8d, 1.1f, new Color[]{Color.valueOf("88bbff"), Color.valueOf("88ddff"), Color.valueOf("aaccff"), Color.valueOf("ccddff"), Color.valueOf("eeeeff"), Color.valueOf("ffffff")}),
@@ -67,42 +64,40 @@ public class VEPlanets {
         }};
         neutronStar.solarSystem = neutronStar;
 
-        proxima = new Planet("proxima", neutronStar, 1f, 3) {
-            {
-                generator = new ProximaPlanetGenerator();
-                visible = true;
-                accessible = false;
-                meshLoader = () -> new HexMesh(this, 6);
-                cloudMeshLoader = () -> new MultiMesh(
-                    new AsteroidBeltMesh(this, 2.5f, 4.5f, 150, 729, Color.valueOf("6a6a6a")),
-                    new ZAxisSkyMesh(this, 2, 0.3f, 0.14f, 5, Color.valueOf("87CEEB").a(0.75f), 2, 0.42f, 1f, 0.43f),
-                    new ZAxisSkyMesh(this, 3, 0.8f, 0.15f, 5, Color.valueOf("87CEEB").a(0.65f), 2, 0.42f, 1.2f, 0.45f)
-                );
-                orbitRadius = 55f;
-                orbitOffset = 0f;
-                tidalLock = true;
-                iconColor = Color.valueOf("87CEEB");
-                atmosphereColor = Color.valueOf("4A90A4");
-                atmosphereRadIn = 0.02f;
-                atmosphereRadOut = 0.3f;
-                hasAtmosphere = true;
-                startSector = 170;
-                alwaysUnlocked = true;
-                defaultEnv = mindustry.world.meta.Env.terrestrial;
-                ruleSetter = r -> {
-                    r.waveTeam = mindustry.game.Team.crux;
-                    r.placeRangeCheck = false;
-                    r.coreDestroyClear = true;
-                };
-                allowWaves = true;
-                allowLegacyLaunchPads = true;
-                allowSectorInvasion = true;
-                allowLaunchSchematics = true;
-                enemyCoreSpawnReplace = true;
-                allowLaunchLoadout = true;
-                landCloudColor = Color.valueOf("87CEEB").a(0.5f);
-            }
-        };
+        proxima = new Planet("proxima", neutronStar, 1f, 3) {{
+            generator = new ProximaPlanetGenerator();
+            visible = true;
+            accessible = false;
+            meshLoader = () -> new HexMesh(this, 6);
+            cloudMeshLoader = () -> new MultiMesh(
+                new AsteroidBeltMesh(this, 2.5f, 4.5f, 150, 729, Color.valueOf("6a6a6a")),
+                new ZAxisSkyMesh(this, 2, 0.3f, 0.14f, 5, Color.valueOf("87CEEB").a(0.75f), 2, 0.42f, 1f, 0.43f),
+                new ZAxisSkyMesh(this, 3, 0.8f, 0.15f, 5, Color.valueOf("87CEEB").a(0.65f), 2, 0.42f, 1.2f, 0.45f)
+            );
+            orbitRadius = 65f;
+            orbitOffset = 0f;
+            tidalLock = true;
+            iconColor = Color.valueOf("87CEEB");
+            atmosphereColor = Color.valueOf("4A90A4");
+            atmosphereRadIn = 0.02f;
+            atmosphereRadOut = 0.3f;
+            hasAtmosphere = true;
+            startSector = 170;
+            alwaysUnlocked = true;
+            defaultEnv = mindustry.world.meta.Env.terrestrial;
+            ruleSetter = r -> {
+                r.waveTeam = mindustry.game.Team.crux;
+                r.placeRangeCheck = false;
+                r.coreDestroyClear = true;
+            };
+            allowWaves = true;
+            allowLegacyLaunchPads = true;
+            allowSectorInvasion = true;
+            allowLaunchSchematics = true;
+            enemyCoreSpawnReplace = true;
+            allowLaunchLoadout = true;
+            landCloudColor = Color.valueOf("87CEEB").a(0.5f);
+        }};
         neutronStar.children.add(proxima);
         proxima.solarSystem = neutronStar;
     }
