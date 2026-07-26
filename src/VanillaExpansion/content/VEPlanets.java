@@ -9,6 +9,7 @@ import VanillaExpansion.expand.maps.NeutronStarPlanetGenerator;
 import VanillaExpansion.expand.maps.ProximaPlanetGenerator;
 import arc.graphics.Color;
 import mindustry.Vars;
+import mindustry.content.Planets;
 import mindustry.graphics.g3d.*;
 import mindustry.graphics.g3d.PlanetGrid.Ptile;
 import mindustry.type.Planet;
@@ -29,7 +30,7 @@ public class VEPlanets {
     public static Planet proxima, neutronStar;
     /** 加载行星定义 */
     public static void load() {
-        neutronStar = new Planet("sol4b", null, 0.9f, 2) {{
+        neutronStar = new Planet("sol4b", Planets.sun, 0.9f, 2) {{
             generator = new NeutronStarPlanetGenerator();
             meshLoader = () -> new RotatingMesh(new MultiMesh(new GenericMesh[]{
                 new SunMesh(this, 8, 5d, 0.3d, 3d, 1.2d, 0.8d, 1.1f, new Color[]{Color.valueOf("88bbff"), Color.valueOf("88ddff"), Color.valueOf("aaccff"), Color.valueOf("ccddff"), Color.valueOf("eeeeff"), Color.valueOf("ffffff")}),
@@ -46,7 +47,7 @@ public class VEPlanets {
             atmosphereRadIn = 0.1f;
             atmosphereRadOut = 0.8f;
             rotateTime = 0.5f;
-            orbitRadius = 20f;
+            orbitRadius = 2000f;
             orbitOffset = 180f;
             camRadius = 1.8f;
             clipRadius = 1.5f;
