@@ -8,9 +8,9 @@ import mindustry.type.Planet;
 public class NeutronJetParticleMesh extends ParticleMesh{
     public float length = 27f;
     public float jetRadius = 0.25f;
-    public float speed = 18f;
-    public float twistSpeed = 120f;
-    public float rotateSpeed = 70f;
+    public float speed = 54f;
+    public float twistSpeed = 360f;
+    public float rotateSpeed = 210f;
     public float particleSize = 0.5f;
     public Color color1 = Color.valueOf("ddeeff");
     public Color color2 = Color.valueOf("4488ff");
